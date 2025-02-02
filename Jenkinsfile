@@ -1,6 +1,6 @@
 def containerName="springbootdocker"
 def tag="latest"
-def dockerHubUser="anujsharma1990"
+def dockerHubUser="sastrysa1"
 def gitURL="https://github.com/anujdevopslearn/SpringBootDocker.git"
 
 node {
@@ -23,7 +23,7 @@ node {
     }
 
     stage('Push to Docker Registry'){
-        withCredentials([usernamePassword(credentialsId: 'dockerHubAccount', usernameVariable: 'dockerUser', passwordVariable: 'dockerPassword')]) {
+        withCredentials([usernamePassword(credentialsId: 'dockerHubAccount', usernameVariable: 'sastrysa1', passwordVariable: 'Sastrypm*1')]) {
             sh "docker login -u $dockerUser -p $dockerPassword"
             sh "docker tag $containerName:$tag $dockerUser/$containerName:$tag"
             sh "docker push $dockerUser/$containerName:$tag"
